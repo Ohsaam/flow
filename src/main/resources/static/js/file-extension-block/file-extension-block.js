@@ -114,13 +114,7 @@ function addCustomExtension() {
     if (!validationExtension(extension)) {
         return;
     }
-    
-    const currentCount = $('.custom-items .custom-tag').length;
-    if (currentCount >= EXTENSION.LIMIT.MAX_COUNT) {
-        alert(`커스텀 확장자는 최대 ${EXTENSION.LIMIT.MAX_COUNT}개까지만 추가할 수 있습니다.`);
-        input.val('');
-        return;
-    }
+
     
     FileHelper.insertExtension(extension, EXTENSION.TYPE.CUSTOM)
         .done(function() {
