@@ -9,8 +9,7 @@ const EXTENSION = {
         N: 'N'
     },
     LIMIT: {
-        MAX_COUNT: 200,
-        MAX_LENGTH: 20
+        MAX_COUNT: 200
     }
 };
 
@@ -35,7 +34,7 @@ const FileHelper = {
             data: JSON.stringify({
                 extensionName: extName,
                 extensionType: extType,
-                isChecked: 'Y'
+                isChecked: EXTENSION.CHECK.Y
             })
         });
     },
@@ -49,7 +48,7 @@ const FileHelper = {
             data: JSON.stringify({
                 extensionName: extName,
                 extensionType: extType,
-                isChecked: isChecked ? 'Y' : 'N'
+                isChecked: isChecked ? EXTENSION.CHECK.Y : EXTENSION.CHECK.N
             })
         });
     },
