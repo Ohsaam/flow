@@ -1,0 +1,196 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: white;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.title-section {
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.title-icon {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.description {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+/* 섹션 타이틀 (고정 확장자, 커스텀 확장자) */
+.section-title {
+    font-size: 13px;  /* 글자 크기 축소 */
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+
+.checkbox-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin: 0;
+}
+
+.checkbox-item label {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.input-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.custom-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    height: 35px;
+    box-sizing: border-box;
+}
+
+.add-btn {
+    padding: 8px 20px;
+    background-color: #6c757d;
+    color: white;
+    border: 1px solid #6c757d;
+    cursor: pointer;
+    font-size: 14px;
+    height: 35px;
+    box-sizing: border-box;
+}
+
+.add-btn:hover {
+    background-color: #5a6268;
+}
+
+.result-box {
+    border: 1px solid #ccc;
+    min-height: 150px; 
+    padding: 15px;
+    padding-top: 25px; 
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.result-box .count {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    font-size: 11px;  
+    color: #666;
+}
+
+.extension-tag {
+    display: inline-block;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    padding: 4px 8px;
+    margin: 2px;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.extension-tag .remove {
+    margin-left: 5px;
+    color: #dc3545;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.empty-message {
+    color: #999;
+    font-size: 12px; 
+    margin-top: 20px;
+}
+
+.custom-input-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    width: 400px;
+}
+
+.custom-input-row input {
+    flex: 1;
+    font-size: 12px; 
+    padding: 4px 4px; 
+}
+
+#addCustomBtn {
+    padding: 4px 12px; 
+    font-size: 12px;  
+    height: 28px;  
+}
+
+.custom-items {
+    margin-top: 10px; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px; 
+}
+
+.custom-tag {
+    background: #f0f0f0;
+    padding: 3px 8px; 
+    border-radius: 2px;  
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 12px;  
+}
+
+.custom-tag .remove {
+    cursor: pointer;
+    color: #666;
+    font-size: 11px;  
+    margin-left: 3px;
+}
+
+.custom-tag .remove:hover {
+    color: #ff0000;
+}

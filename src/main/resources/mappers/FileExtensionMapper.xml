@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.flow.flow.dao.FileExtensionDao">
+
+    <select id="getAllExtensions" resultType="com.flow.flow.dto.FileExtensionDto">
+        SELECT
+            id,
+            extension_name AS extensionName,
+            extension_type AS extensionType,
+            is_checked AS isChecked,
+            created_at AS createdAt,
+            updated_at AS updatedAt
+        FROM file_extensions
+        ORDER BY 
+            CASE 
+                WHEN extension_type = 'FIXED' THEN
+                    CASE extension_name
+                        WHEN 'bat' THEN 1
+                        WHEN 'cmd' THEN 2
+                        WHEN 'com' THEN 3
+                        WHEN 'cpl' THEN 4
+                        WHEN 'exe' THEN 5
+                        WHEN 'scr' THEN 6
+                        WHEN 'js' THEN 7
+                    END
+            END,
+            extension_type DESC,  
+            created_at ASC      
+    </select>
+
+    <insert id="upsertExtension" parameterType="com.flow.flow.dto.FileExtensionDto" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO file_extensions (extension_name, extension_type, is_checked)
+        VALUES (#{extensionName}, #{extensionType}, #{isChecked})
+        ON CONFLICT (extension_name)
+        DO UPDATE SET
+            is_checked = COALESCE(EXCLUDED.is_checked, file_extensions.is_checked),
+            updated_at = NOW()
+    </insert>
+
+    <!-- DELETE: 이름+타입으로 삭제 -->
+    <delete id="deleteExtensions" parameterType="com.flow.flow.dto.FileExtensionDto">
+        DELETE FROM file_extensions
+        WHERE extension_name = #{extensionName}
+          AND extension_type = #{extensionType}
+    </delete>
+</mapper> 

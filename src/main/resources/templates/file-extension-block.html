@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파일 확장자 차단</title>
+    <link rel="stylesheet" href="/css/file-extension-block.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/fileHelper.js"></script>
+    <script src="/js/file-extension-block/file-extension-block.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="title-section">
+            <div class="title">
+                <div class="title-icon">⊙</div>
+                파일 확장자 차단
+            </div>
+        </div>
+        
+        <div class="description">
+            파일확장자에 따라 특정 형식의 파일을 첨부하거나 전송하지 못하도록 제한
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                고정 확장자
+            </div>
+            <div class="checkbox-row">
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                커스텀 확장자
+            </div>
+            <div class="custom-input-row">
+                <input type="text" id="customExtension" maxlength="20" placeholder="확장자 입력(최대 20자까지 입력 가능합니다.)">
+                <button type="button" id="addCustomBtn">추가</button>
+            </div>
+            <div class="result-box">
+                <div class="count">0/200</div>
+                <div class="custom-items"></div>
+                <div class="empty-message">선택된 확장자가 없습니다.</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html> 
