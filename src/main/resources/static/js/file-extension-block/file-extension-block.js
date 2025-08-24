@@ -111,10 +111,6 @@ function addCustomExtension() {
     const input = $('#customExtension');
     const extension = input.val().trim();
     
-    if (!extension) {
-        alert('확장자를 입력해주세요.');
-        return;
-    }
     if (!validationExtension(extension)) {
         return;
     }
