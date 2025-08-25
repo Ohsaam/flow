@@ -35,11 +35,11 @@ $(function() {
             });
     });
 
-    initFixedExtensions();
+    initExtensions();
 
 });
 
-function initFixedExtensions() {
+function initExtensions() {
     FileHelper.selectAllExtension().done(function(data) {
         if (!data || data.length === 0)
             return;
